@@ -1,7 +1,20 @@
 import { useState } from 'react'
 
+const CORRECT_DATE = '1969-03-29'
+
 function Question2({ onNext }) {
   const [answer, setAnswer] = useState('')
+
+  let message = null
+  if (answer !== '' && answer !== CORRECT_DATE) {
+    if (answer > CORRECT_DATE) {
+      message = "Don't be pesky. We know your real age."
+    } else {
+      message = "You're not that old!!!"
+    }
+  }
+
+  const isCorrect = answer === CORRECT_DATE
 
   return (
     <div>
@@ -11,9 +24,8 @@ function Question2({ onNext }) {
         value={answer}
         onChange={(e) => setAnswer(e.target.value)}
       />
-      <button onClick={onNext} disabled={answer === ''}>
-        Next
-      </button>
+      {message && <p>{message}</p>}
+      {isCorrect && <button onClick={onNext}>Next</button>}
     </div>
   )
 }
