@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import bruh from '../assets/bruh.jpg'
+import bruhSound from '../assets/bruh.mp3'
 
 function Question3({ onNext }) {
   const [showBruh, setShowBruh] = useState(false)
@@ -7,6 +8,7 @@ function Question3({ onNext }) {
   const [buttonsVisible, setButtonsVisible] = useState(true)
 
   function handleNo() {
+    new Audio(bruhSound).play()
     setButtonsVisible(false)
     setShowBruh(true)
     setTimeout(() => setBruhVisible(true), 10)
