@@ -1,6 +1,6 @@
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
+  --text: #00ff41;
+  --text-h: #00ff41;
   --bg: #fff;
   --border: #e5e4e7;
   --code-bg: #f4f3ec;
@@ -53,6 +53,8 @@
 body {
   margin: 0;
   background: #000;
+  -webkit-text-stroke: 2px #ff4500;
+  text-shadow: 0 0 8px #ff4500;
 }
 
 #root {
@@ -75,26 +77,32 @@ h2 {
   color: var(--text-h);
 }
 
-h1 {
+h1,
+h2 {
   font-size: 56px;
   letter-spacing: -1.68px;
+  line-height: 1.6;
   margin: 32px 0;
   @media (max-width: 1024px) {
     font-size: 36px;
     margin: 20px 0;
   }
 }
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
 p {
   margin: 0;
+}
+
+input, select, button {
+  font-family: 'Press Start 2P', system-ui, sans-serif;
+  font-size: 20px;
+  padding: 16px 24px;
+  border-radius: 8px;
+  border: 2px solid #ff4500;
+  background: #000;
+  color: #00ff41;
+  -webkit-text-stroke: 1px #ff4500;
+  text-shadow: 0 0 8px #ff4500;
+  cursor: pointer;
 }
 
 code,

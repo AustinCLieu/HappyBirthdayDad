@@ -17,7 +17,7 @@ function Question2({ onNext }) {
   const isCorrect = answer === CORRECT_DATE
 
   return (
-    <div>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '24px' }}>
       <h2>What is your birthday?</h2>
       <input
         type="date"
