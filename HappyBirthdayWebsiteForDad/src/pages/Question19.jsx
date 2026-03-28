@@ -22,7 +22,7 @@ function Question19({ onNext }) {
       </div>
       {selected && (
         <>
-          <p>We just wanted to see what you chose.</p>
+          <p>We just wanted to see what you would choose.</p>
           <button onClick={onNext}>Next</button>
         </>
       )}
