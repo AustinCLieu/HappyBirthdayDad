@@ -1,7 +1,7 @@
 function Welcome({ onNext }) {
   return (
     <div>
-      <h1>Happy Birthday Dad!</h1>
+      <h1>Incoming transmission. Identify yourself, Commander.</h1>
       <button onClick={onNext}>Begin</button>
     </div>
   )
