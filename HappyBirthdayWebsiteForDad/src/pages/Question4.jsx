@@ -1,23 +1,19 @@
 import { useState } from 'react'
 
-const OPTIONS = ['Mom', 'Dad', 'Austin', 'Brennan']
-const CORRECT = 'Brennan'
+const OPTIONS = ['Nucleus', 'Mitochondria', 'Golgi Apparatus', 'Ribosome']
+const CORRECT = 'Mitochondria'
 
-function Question3({ onNext }) {
+function Question4({ onNext }) {
   const [selected, setSelected] = useState(null)
-
-  const handleSelect = (option) => {
-    setSelected(option)
-  }
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '24px' }}>
-      <h2>Who has the highest score on the Pacman machine?</h2>
+      <h2>What is the powerhouse of the cell?</h2>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
         {OPTIONS.map((option) => (
           <button
             key={option}
-            onClick={() => handleSelect(option)}
+            onClick={() => setSelected(option)}
             style={{
               opacity: selected && selected !== option ? 0.4 : 1,
               outline: selected === option ? '2px solid lime' : 'none',
@@ -27,9 +23,7 @@ function Question3({ onNext }) {
           </button>
         ))}
       </div>
-      {selected && selected !== CORRECT && (
-        <p>Wrong! Try again.</p>
-      )}
+      {selected && selected !== CORRECT && <p>Wrong! Try again.</p>}
       {selected === CORRECT && (
         <>
           <p>Correct!</p>
@@ -40,4 +34,4 @@ function Question3({ onNext }) {
   )
 }
 
-export default Question3
+export default Question4
