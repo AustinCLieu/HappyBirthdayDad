@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { playWrongSound, playCorrectSound } from '../utils/playWrongSound'
 
 const OPTIONS = ['Mom', 'Dad', 'Austin', 'Brennan']
 const CORRECT = 'Brennan'
@@ -8,6 +9,7 @@ function Question3({ onNext }) {
 
   const handleSelect = (option) => {
     setSelected(option)
+    if (option !== CORRECT) playWrongSound(); else playCorrectSound()
   }
 
   return (

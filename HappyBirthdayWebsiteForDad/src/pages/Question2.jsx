@@ -54,7 +54,9 @@ function Question2({ onNext }) {
         <input
           type="date"
           value={answer}
-          onChange={(e) => setAnswer(e.target.value)}
+          onChange={(e) => {
+            setAnswer(e.target.value)
+          }}
         />
         {message && <p>{message}</p>}
         {isCorrect && <button onClick={handleNext}>Next</button>}

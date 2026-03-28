@@ -1,20 +1,16 @@
 import { useState } from 'react'
-import { playWrongSound, playCorrectSound } from '../utils/playWrongSound'
 
-const OPTIONS = ['Linear Algebra', 'Differential Equations', 'Calculus', 'Statistics']
-const CORRECT = 'Differential Equations'
-
-function Question5({ onNext }) {
+function Question19({ onNext }) {
   const [selected, setSelected] = useState(null)
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '24px' }}>
-      <h2>What type of math are you best at?</h2>
+      <h2>Was Merrick Garland a good attorney general?</h2>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-        {OPTIONS.map((option) => (
+        {['Yes', 'No'].map((option) => (
           <button
             key={option}
-            onClick={() => { setSelected(option); if (option !== CORRECT) playWrongSound(); else playCorrectSound() }}
+            onClick={() => setSelected(option)}
             style={{
               opacity: selected && selected !== option ? 0.4 : 1,
               outline: selected === option ? '2px solid lime' : 'none',
@@ -24,10 +20,9 @@ function Question5({ onNext }) {
           </button>
         ))}
       </div>
-      {selected && selected !== CORRECT && <p>Wrong! Try again.</p>}
-      {selected === CORRECT && (
+      {selected && (
         <>
-          <p>Correct!</p>
+          <p>We just wanted to see what you chose.</p>
           <button onClick={onNext}>Next</button>
         </>
       )}
@@ -35,4 +30,4 @@ function Question5({ onNext }) {
   )
 }
 
-export default Question5
+export default Question19

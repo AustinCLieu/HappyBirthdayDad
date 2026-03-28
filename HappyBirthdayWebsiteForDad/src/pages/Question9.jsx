@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { playWrongSound, playCorrectSound } from '../utils/playWrongSound'
 
 const LEFT = [
   'Mechanical, Energy, and Aerospace Engineering',
@@ -35,7 +36,7 @@ function Column({ options, selected, onSelect }) {
       {options.map((option) => (
         <button
           key={option}
-          onClick={() => onSelect(option)}
+          onClick={() => { onSelect(option); if (option !== CORRECT) playWrongSound(); else playCorrectSound() }}
           style={{
             opacity: selected && selected !== option ? 0.4 : 1,
             outline: selected === option ? '2px solid lime' : 'none',

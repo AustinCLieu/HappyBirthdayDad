@@ -1,15 +1,15 @@
 import { useState } from 'react'
 import { playWrongSound, playCorrectSound } from '../utils/playWrongSound'
 
-const OPTIONS = ['Linear Algebra', 'Differential Equations', 'Calculus', 'Statistics']
-const CORRECT = 'Differential Equations'
+const OPTIONS = ['Chien', 'Chen', 'Chin', 'Chang', 'Chiang', 'Qiang', 'Qin', 'Wang', 'Qian', 'Tang', 'Liu', 'Qun']
+const CORRECT = 'Qian'
 
-function Question5({ onNext }) {
+function Question11({ onNext }) {
   const [selected, setSelected] = useState(null)
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '24px' }}>
-      <h2>What type of math are you best at?</h2>
+      <h2>What is Brennan's girlfriend's last name?</h2>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
         {OPTIONS.map((option) => (
           <button
@@ -35,4 +35,4 @@ function Question5({ onNext }) {
   )
 }
 
-export default Question5
+export default Question11

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { playWrongSound, playCorrectSound } from '../utils/playWrongSound'
 
 const OPTIONS = ['9', '10', '11', '12']
 const CORRECT = '10'
@@ -13,7 +14,7 @@ function Question8({ onNext }) {
         {OPTIONS.map((option) => (
           <button
             key={option}
-            onClick={() => setSelected(option)}
+            onClick={() => { setSelected(option); if (option !== CORRECT) playWrongSound(); else playCorrectSound() }}
             style={{
               opacity: selected && selected !== option ? 0.4 : 1,
               outline: selected === option ? '2px solid lime' : 'none',

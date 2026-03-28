@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { playWrongSound, playCorrectSound } from '../utils/playWrongSound'
 
 function Question1({ onNext }) {
   const [firstName, setFirstName] = useState('')
@@ -13,9 +14,11 @@ function Question1({ onNext }) {
     const correctName = firstName.trim().toLowerCase() === 'ted' && lastName.trim().toLowerCase() === 'lieu'
     const correctSuffix = suffix === 'THE BEST FATHER IN THE WORLD'
     if (correctName && correctSuffix) {
+      playCorrectSound()
       onNext()
     } else {
       setWrong(true)
+      playWrongSound()
     }
   }
 

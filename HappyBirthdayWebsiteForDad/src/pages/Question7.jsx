@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { playWrongSound, playCorrectSound } from '../utils/playWrongSound'
 
 const OPTIONS = [
   { label: 'bar', bottomLeft: false },
@@ -23,7 +24,7 @@ function Question7({ onNext }) {
         {OPTIONS.filter((o) => !o.bottomLeft).map((option, i) => (
           <button
             key={i}
-            onClick={() => setSelected(i)}
+            onClick={() => { setSelected(i); if (OPTIONS[i].label !== CORRECT) playWrongSound(); else playCorrectSound() }}
             style={{
               opacity: selected !== null && selected !== i ? 0.4 : 1,
               outline: selected === i ? '2px solid lime' : 'none',
@@ -36,7 +37,7 @@ function Question7({ onNext }) {
 
       {/* Hidden "Legal Bar" button in bottom left */}
       <button
-        onClick={() => setSelected(hiddenIndex)}
+        onClick={() => { setSelected(hiddenIndex); if (hiddenOption.label !== CORRECT) playWrongSound(); else playCorrectSound() }}
         style={{
           position: 'fixed',
           bottom: '16px',
