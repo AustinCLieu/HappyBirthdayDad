@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import galagaShipSrc from '../assets/galagaship.png'
+import galagaShipSrc from '../assets/galagaship2-Picsart-BackgroundRemover.png'
 
 export default function StarField() {
   const canvasRef = useRef(null)
