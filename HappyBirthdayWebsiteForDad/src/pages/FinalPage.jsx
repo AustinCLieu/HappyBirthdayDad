@@ -12,6 +12,7 @@ function FinalPage() {
     <div>
       <audio ref={audioRef} src={happyBirthday} />
       <h1>You passed! Happy Birthday Dad!</h1>
+      <p>From Mom, Brennan, and Austin</p>
     </div>
   )
 }
